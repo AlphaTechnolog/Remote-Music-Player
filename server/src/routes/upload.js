@@ -4,7 +4,11 @@ const pathUrl = require('../middlewares/pathUrl');
 
 router.post('/:path?', baseUrl, pathUrl, async (req, res) => {
   const { pathUrl: path } = req;
-  const { musics } = req.files;
+  let { musics } = req.files;
+
+  if (!musics.length) {
+    musics = [musics];
+  }
 
   for await (const music of musics) {
     await music.mv(`${path}/${music.name}`);
