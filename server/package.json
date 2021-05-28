@@ -1,0 +1,24 @@
+{
+  "name": "remote-music-player-server",
+  "description": "A remote music player for your lan (server)",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Gabriel Guerra <gfranklings@gmail.com>",
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.2.1",
+    "mongoose": "^5.11.17",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
