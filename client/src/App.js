@@ -4,7 +4,6 @@ import { GlobalContextProvider } from './context/global';
 
 import Navbar from './components/Navbar';
 import Content from './views/Content';
-import Settings from './views/Settings';
 
 const App = () => {
   return (
@@ -14,9 +13,6 @@ const App = () => {
           <Navbar />
           <Route path="/" exact>
             <Content />
-          </Route>
-          <Route path="/settings">
-            <Settings />
           </Route>
         </GlobalContextProvider>
       </Switch>

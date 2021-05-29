@@ -46,10 +46,10 @@ const Navbar = () => {
     <>
       <AppBar bg="dark" variant="dark" fixed="top">
         <AppBar.Collapse id="nav-links">
-          <Nav className="mr-auto">
-            <Nav.Link href="/">Explore</Nav.Link>
-            <Nav.Link href="/settings">Settings</Nav.Link>
-          </Nav>
+          <AppBar.Brand href="/">
+            {document.title}
+          </AppBar.Brand>
+          <Nav className="mr-auto" />
           <Form inline>
             <Form.Control
               type="text"
