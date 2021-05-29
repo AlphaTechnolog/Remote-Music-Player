@@ -4,12 +4,12 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Spinner from 'react-bootstrap/Spinner';
-import Dirent from './Dirent';
-import Player from './Player'
-import Mkdir from './Mkdir'
-import UploadMusic from './UploadMusic'
-import Folder from './Folder'
-import File from './File'
+import Dirent from '../components/Dirent';
+import Player from '../components/Player'
+import Mkdir from '../components/Mkdir'
+import UploadMusic from '../components/UploadMusic'
+import Folder from '../components/Folder'
+import File from '../components/File'
 
 const Content = () => {
   const {

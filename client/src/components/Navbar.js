@@ -45,11 +45,11 @@ const Navbar = () => {
   return (
     <>
       <AppBar bg="dark" variant="dark" fixed="top">
-        <AppBar.Brand href="#">
-          {document.title}
-        </AppBar.Brand>
         <AppBar.Collapse id="nav-links">
-          <Nav className="mr-auto" />
+          <Nav className="mr-auto">
+            <Nav.Link href="/">Explore</Nav.Link>
+            <Nav.Link href="/settings">Settings</Nav.Link>
+          </Nav>
           <Form inline>
             <Form.Control
               type="text"
@@ -60,7 +60,7 @@ const Navbar = () => {
           </Form>
         </AppBar.Collapse>
       </AppBar>
-      <br /><br /><br />
+      <br /><br /><br /><br />
     </>
   )
 }

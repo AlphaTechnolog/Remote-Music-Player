@@ -1,15 +1,26 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { GlobalContextProvider } from './context/global';
 
 import Navbar from './components/Navbar';
-import Content from './components/Content';
+import Content from './views/Content';
+import Settings from './views/Settings';
 
 const App = () => {
   return (
-    <GlobalContextProvider>
-      <Navbar />
-      <Content />
-    </GlobalContextProvider>
+    <Router>
+      <Switch>
+        <GlobalContextProvider>
+          <Navbar />
+          <Route path="/" exact>
+            <Content />
+          </Route>
+          <Route path="/settings">
+            <Settings />
+          </Route>
+        </GlobalContextProvider>
+      </Switch>
+    </Router>
   )
 }
 
