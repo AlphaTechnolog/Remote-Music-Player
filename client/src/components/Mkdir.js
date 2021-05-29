@@ -39,7 +39,7 @@ const Mkdir = () => {
 
   return (
     <>
-      <Button variant="primary" onClick={toggleShowModal}>
+      <Button variant="primary" onClick={toggleShowModal} className="mb-1">
         Make a directory
       </Button>
 

@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import Col from 'react-bootstrap/Col';
 import { globalContext } from '../context/global';
 import { Folder as FolderIcon } from 'react-bootstrap-icons';
 
@@ -14,10 +15,16 @@ const Folder = ({ dir }) => {
   }
 
   return (
-    <tr onClick={handleClick} style={{ cursor: "pointer" }}>
-      <td><FolderIcon size={32} /></td>
-      <td><h5>{dir}</h5></td>
-    </tr>
+    <Col
+      sm={12}
+      md={4}
+      lg={3}
+      className="text-center my-4 hovered-element"
+      onClick={handleClick}
+    >
+      <FolderIcon size={48} />
+      <h5>{dir}</h5>
+    </Col>
   )
 }
 

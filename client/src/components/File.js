@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { FileMusic } from 'react-bootstrap-icons';
 import { globalContext } from '../context/global';
-import Button from 'react-bootstrap/Button';
+import Col from 'react-bootstrap/Col';
 
 const File = ({ file }) => {
   const {
@@ -13,27 +13,21 @@ const File = ({ file }) => {
     setActualPlayerMusic(file);
   }
   
-  const cancelActualPlayerMusic = () => {
-    const MUSIC_CANCELATION_TEXT = '';
-    setActualPlayerMusic(MUSIC_CANCELATION_TEXT);
-  }
-
   return (
-    <tr>
-      <td><FileMusic size={32} /></td>
-      <td onClick={handleFileClick} style={{ cursor: 'pointer' }}>
+    <>
+      <Col
+        sm={12}
+        md={4}
+        lg={3}
+        className="text-center my-4 hovered-element"
+        onClick={handleFileClick}
+      >
+        <FileMusic size={48} />
         <h5 className={`text-${actualPlayerMusic === file ? 'info' : 'normal'}`}>
           {file}
         </h5>
-      </td>
-      {actualPlayerMusic === file && (
-        <td className="mb-2">
-          <Button variant="danger" onClick={cancelActualPlayerMusic}>
-            Stop
-          </Button>
-        </td>
-      )}
-    </tr>
+      </Col>
+    </>
   )
 }
 

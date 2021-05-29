@@ -22,7 +22,7 @@ const UploadMusic = () => {
 
   return (
     <>
-      <Button variant="success" onClick={toggleShowModal}>
+      <Button variant="success" onClick={toggleShowModal} className="mb-1">
         Upload music
       </Button>
 
