@@ -17,20 +17,17 @@ const Player = () => {
   }
 
   return (
-    <>
-      <h4 className="mx-2">
-        {actualPlayerMusic}
-      </h4>
+    <div className="player-bar">
       <video
         width="100%"
-        height="15"
+        height="25"
         id="player"
         autoPlay
         controls
         src={completePlayerMusic}
         onEnded={handleEnd}
       />
-    </>
+    </div>
   )
 }
 

@@ -1,0 +1,10 @@
+body {
+    overflow-x: hidden;
+}
+
+.player-bar {
+    position: fixed;
+    bottom: 0;
+    background: transparent;
+    width: 100%;
+}

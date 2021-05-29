@@ -31,19 +31,13 @@ const Content = () => {
 
   return (
     <>
-      {showPlayer && (
-        <Player />
-      )}
-
       <Row>
         <Col className="my-2 mx-2">
           <h3>Content of {fmtPath(path)}</h3>
         </Col>
         <Col style={{ textAlign: "right" }} className="my-2 mx-2">
           <Mkdir />
-
           &nbsp;
-
           <UploadMusic />
         </Col>
       </Row>
@@ -88,6 +82,9 @@ const Content = () => {
             )}
           </tbody>
         </table>
+      )}
+      {showPlayer && (
+        <Player />
       )}
     </>
   )
