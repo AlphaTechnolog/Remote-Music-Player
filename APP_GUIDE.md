@@ -40,7 +40,7 @@ The search input, support the regex search, e.g, if your music is
 called `favorite - my favorite favorite music.mp3`, you want to type
 in the search input this: `^fa.*.-..*fav.*\.m.*3$`, it's a example
 and complicated regular expresion, but a more simple regex (regular
-expresion), is: `^favorite - my.*music\.mp3$', it works!
+expresion), is: `^favorite - my.*music\.mp3$`, it works!
 
 ## Enjoy
 
