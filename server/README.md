@@ -1,58 +1,106 @@
-# Remote music player
+# Remote music player (Server)
 
-A music player, running on your lan -> server.
+The API for the app.
 
-## Setting up the server
+## Getting started
 
-First clone the repository:
+First read this [doc](../README.md)
 
-```sh
-mkdir ~/repo
-cd ~/repo
-git clone https://github.com/AlphaTechnolog/Remote-Music-Player
-cd Remote-Music-Player/server
-npm install
-```
+## Installing dependencies
 
-Now configure the `.env` file:
+First install the server dependencies:
 
 ```sh
-cd $HOME/repo/Remote-Music-Player/server
-vim .env # edit/create the file with your favorite editor
+cd ~/repo/remote-music-player/server
+npm install # or
+yarn
 ```
 
-```bash
-APP_PORT=8000 # The port of server
-BASE_URL=$HOME/.remote-music-player # The root of musics
-```
+### Configuring the .env file
 
-Run the server:
+To configure the `.env` file use the `sample.env` file as reference:
 
 ```sh
-cd $HOME/.remote-music-player
-mkdir -p dir1/dir2
-cp -r ~/Musics/01.mp3 ~/Musics/02.mp3 ./dir1/dir2s
+cd ~/repo/remote-music-player/server
+cp -r sample.env .env
+vim .env
 ```
 
-## Endpoints
-
-To get the content of a folder use the next endpoint:
-
-- /content/{formatedPath}
-
-The `formatedPath` is a directories path with the next
-sequence of tokens: if the directory is: /dir1/dir2
-the valid path is dir1!dir2 and the endpoint route is:
-`/content/dir1!dir2`, example:
+Now edit it:
 
 ```sh
-mkdir -p $HOME/.remote-music-player/dir1/dir2
-touch $HOME/.remote-music-player/dir1/dir2/hello
-curl "http://localhost:8000/content/dir1!dir2"
-{
-    "directories": [],
-    "files": [
-        "hello"
-    ]
-}
+# Define the API port
+APP_PORT=
+
+# Define the music storage folder, use $HOME to reference to your /home/user
+BASE_URL=
 ```
+
+### An example configuration:
+
+First create the storage folder:
+
+```sh
+mkdir ~/.remote-music-player-storage
+```
+
+Now edit the `.env` file:
+
+```sh
+cd ~/repo/remote-music-player/server
+vim .env
+```
+
+**NOTE**: Use vim/nvim/nano/vi/code... your favorite editor!
+
+```sh
+# Define the API port
+APP_PORT=
+
+# Define the music storage folder, use $HOME to reference to your /home/user
+BASE_URL=$HOME/.remote-music-player-storage # The created folder name
+```
+
+Now the port of the server, the default port is **8080**, but it's
+customizable:
+
+```sh
+vim .env
+```
+
+```sh
+# Define the API port
+APP_PORT=8000
+
+# Define the music storage folder, use $HOME to reference to your /home/user
+BASE_URL=$HOME/.remote-music-player-storage
+```
+
+With this config, the address of the server is: `localhost:8000`
+
+## Running the server
+
+To run the server run this commands:
+
+```sh
+cd ~/repo/remote-music-player/server
+npm start # or
+yarn start # or with native style
+node src/index.js
+```
+
+If your config is:
+
+```sh
+# Define the API port
+APP_PORT=8000
+
+# Define the music storage folder, use $HOME to reference to your /home/user
+BASE_URL=$HOME/.remote-music-player-storage
+```
+
+The api address is: `localhost:8000` or `YOURIP:8000`
+
+## What's the next?
+
+Configure the [frontend](../client/README.md)
