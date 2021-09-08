@@ -1,6 +1,8 @@
 # Remote music player
 
-Play your musics in your lan
+Play your musics in your lan.
+
+![Demo](./.screenshots/d1.png)
 
 ## Getting started
 
